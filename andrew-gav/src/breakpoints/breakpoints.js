@@ -1,3 +1,4 @@
+// deciding on breakpoints and creating importable template literals for reusability // 
 const points = {
   S: '768px',
   M: '1024px',
