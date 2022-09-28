@@ -10,11 +10,11 @@ position: relative;
 overflow: hidden;`;
 
 const AboutMeHeader = styled.div.attrs({
-  style: ({ scrollPercent }) => ({
+  styles: ({ scrollPercent }) => ({
     transform: `translateX(${(scrollPercent) * 5.5}%)`,
   }),
 })`transition: transform 0.5s ease-out;
-font-family: 'AvenirHeavy';
+font-family: 'Helvetica';
 position: absolute;
 color: #EEE;
 top:5%;
