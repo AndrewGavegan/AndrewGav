@@ -9,11 +9,6 @@ const MainStyle = createGlobalStyle
 
 class App extends Component {
 
-  componentDidMount() {
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
-  }
   render() {
     return (
       <React.Fragment>
