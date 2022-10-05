@@ -3,29 +3,29 @@ import './App.css';
 import { useInView } from 'react-intersection-observer';
 
 export default function App() {
-  const { ref: myRef, inView: OnScreen } = useInView()
+  const { ref: aboutRef, inView: aboutSlide } = useInView()
+  const { ref: nameRef, inView: nameSlide } = useInView()
+  const { ref: descRef, inView: descSlide } = useInView()
+  const { ref: meRef, inView: meSlide } = useInView()
 
-  // const myRef = useRef();
-  // const [OnScreen, setOnScreen] = useState();
-  // console.log('OnScreen', OnScreen);
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     const entry = entries[0];
-  //     setOnScreen(entry.isIntersecting)
-  //   })
-  //   observer.observe(myRef.current)
-  // }, [])
+
   return (
     <div className="Page">
       <div className="Container">
-        <h1>Andrew Gavegan</h1>
-        <h2 ref={myRef}>Full Stack Web Developer</h2>
+        <h1 className="nameH1" ref={nameRef}>
+          <span className={`${'nameOff'} ${nameSlide ? 'nameOn' : ''}`}>Andrew Gavegan</span>
+        </h1>
+        <h2 className="descH1" ref={descRef}>
+          <span className={`${'descOff'} ${descSlide ? 'descOn' : ''}`}>Full Stack Web Developer</span>
+        </h2>
       </div>
       <div className="Container">
-        <h1>{OnScreen ? 'Nothing' : 'ABOUT ME'}</h1>
-        <p>
-          Full stack developer who thrives working in a diverse team.
-          Determined to always be learning and coding and learning and coding.
+        <h1 className="aboutH1" ref={aboutRef} >
+          <span className={`${'aboutOff'} ${aboutSlide ? 'aboutOn' : ''}`}>ABOUT ME</span>
+        </h1>
+        <p className="meP" ref={meRef} >
+          <span className={`${'meOff'} ${meSlide ? 'meOn' : ''}`}>Full stack developer who thrives working in a diverse team. <br />
+            Determined to always be learning and coding and learning and coding.</span>
         </p>
       </div>
       <div className="Container">
